@@ -1,9 +1,11 @@
 import sys
 from bs4 import BeautifulSoup
 import requests
+import json
 import pandas as pd
-print(sys.argv[1])
-print(sys.argv[2])
+#print(sys.argv[1])
+#print(sys.argv[2])
+ItemName=sys.argv[1]
 maxitems=int(sys.argv[2])
 url = "https://www.amazon.in/s?k="
 headers = {"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0"}
@@ -30,7 +32,7 @@ rating = []
 price = []
 image = []
 stop = False
-item_name = sys.argv[1]
+item_name = ItemName
 web_page = getsoup(item_name, "1")
 num_pages = int(web_page.find_all('ul', class_="a-pagination")[0].find_all('li', class_="a-disabled")[-1].text)
 page_num=1
@@ -62,7 +64,8 @@ for i in range(2,num_pages+1):
     page_num+=1
 
 data = {'name':name, 'price':price, 'ratings':rating, 'image':image}
-df = pd.DataFrame(data=data)
-df.to_json(f"{item_name}_amazon.json", orient="split", compression="infer")
-print(df)
+dataItems = json.dumps(data)
+'''df = pd.DataFrame(data=data)
+df.to_json(f"{item_name}_amazon.json", orient="split", compression="infer")'''
+print(dataItems)
 sys.stdout.flush()
