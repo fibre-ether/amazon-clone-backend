@@ -14,7 +14,7 @@ var jsondata = 0;
 
 
 app.get("/", (req, res, next) => {
-    console.log(`hello ${req.body} ${req.headers["arg2"]} ${req.params["arg1"]}`);
+    console.log(`hello ${req.headers["arg1"]} ${req.headers["arg2"]} ${req.params["arg1"]}`);
     const pythonProcess = spawn('python',["get_amzn_json.py", req.headers["arg1"], req.headers["arg2"]]);
     pythonProcess.stdout.on('data', (data) => {
         jsondata = data;
