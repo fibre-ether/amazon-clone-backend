@@ -21,8 +21,8 @@ proxyDict = {
 def getsoup(item, pagenum):
     url = "https://www.amazon.in/s?k="+item+"&page="+pagenum
     webpage = requests.get(url, headers=headers)
-    with open("bestseller.html","w", encoding="utf-8") as f:
-        f.write(webpage.text)
+    #seller.html","w", encoding="utf-8") as f:
+        #f.write(webpage.text)
     #print(webpage.status_code)
     soup = BeautifulSoup(webpage.content, "lxml")
     return soup
@@ -34,7 +34,12 @@ image = []
 stop = False
 item_name = ItemName
 web_page = getsoup(item_name, "1")
-num_pages = int(web_page.find_all('ul', class_="a-pagination")[0].find_all('li', class_="a-disabled")[-1].text)
+try:
+    num_pages = int(web_page.find_all('ul', class_="a-pagination")[0].find_all('li', class_="a-disabled")[-1].text)
+except:
+    print("Nohing Found")
+    sys.stdout.flush()
+    exit()
 page_num=1
 #print(num_pages, "pages to be scraped")
 for i in range(2,num_pages+1):
