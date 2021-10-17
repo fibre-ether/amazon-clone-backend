@@ -2,7 +2,7 @@ import sys
 from bs4 import BeautifulSoup
 import requests
 import json
-print("hi")
+print("hi there")
 exit()
 print(sys.argv[1])
 print(sys.argv[2])
