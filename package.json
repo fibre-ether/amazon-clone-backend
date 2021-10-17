@@ -1,17 +1,30 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend made using node.js for an amazon clone I made.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "AkshitG",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibre-ether/amazon-clone-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fibre-ether/amazon-clone-backend/issues"
+  },
+  "homepage": "https://github.com/fibre-ether/amazon-clone-backend#readme"
+   ,
+    "engines": {
+    "node": "14.18.0"
   }
 }
