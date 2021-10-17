@@ -2,11 +2,9 @@ import sys
 from bs4 import BeautifulSoup
 import requests
 import json
-print("hi")
-exit()
-print(sys.argv[1])
-print(sys.argv[2])
-exit()
+#print(sys.argv[1])
+#rint(sys.argv[2])
+
 ItemName=sys.argv[1]
 maxitems=int(sys.argv[2])
 url = "https://www.amazon.in"
