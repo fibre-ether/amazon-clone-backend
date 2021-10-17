@@ -4,6 +4,7 @@ import requests
 import json
 print(sys.argv[1])
 print(sys.argv[2])
+exit()
 ItemName=sys.argv[1]
 maxitems=int(sys.argv[2])
 url = "https://www.amazon.in"
